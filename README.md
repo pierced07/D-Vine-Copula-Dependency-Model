@@ -1,4 +1,4 @@
-# D-Vine Copula Dependency Model
+# ML Guided D-Vine Copula Model
 
 A copula-based supervised learning model that captures higher-order dependency structures using a D-Vine construction to improve classification performance.
 
