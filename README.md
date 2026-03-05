@@ -11,7 +11,7 @@ Copula-based models address this by explicitly modeling dependency structures. H
 **This project introduces a machine learning-based selection mechanism** that predicts optimal copula families from data characteristics, eliminating the need for exhaustive fitting.
 
 Inspired by:  
-[A Copula-Based Supervised Learning Classification](https://doi.org/10.1080/15598608.2016.1278059)
+[A Copula-Based Supervised Learning Classification](https://doi.org/10.1080/15598608.2016.1278059) by Dr. Yuhui Chen. 
 
 ## Key Innovation
 
@@ -29,7 +29,7 @@ Given features X₁, ..., Xₔ, the joint distribution is decomposed using a D-V
 
 
 ### ML-Based Copula Selection
-1. **Generate synthetic training data** with known copula families (Gaussian, Clayton, Gumbel, Frank, etc.)
+1. **Generate synthetic training data** with known copula families (Gaussian, Clayton etc.)
 2. **Extract meta-features** from each dataset:
    - Kendall's τ / Spearman's ρ
    - Upper/Lower tail dependence coefficients
@@ -41,7 +41,7 @@ Given features X₁, ..., Xₔ, the joint distribution is decomposed using a D-V
 ## Implementation Details
 
 - **Language:** Python 3.8+
-- **Copula families:** Gaussian, Clayton, Gumbel, Frank, Student-t
+- **Copula families:** Gaussian, Clayton, Student-t
 - **Vine structure:** D-Vine
 - **Selection method:** ML classifier (sklearn) + BIC fallback
 - **Marginal estimation:** Kernel Density Estimation / Empirical CDF
@@ -51,23 +51,10 @@ Given features X₁, ..., Xₔ, the joint distribution is decomposed using a D-V
 
 ```bash
 git clone https://github.com/pierced07/ml-guided-d-vine-copula.git
+```
+```bash
 cd ml-guided-d-vine-copula
+```
+```bash
 pip install -r requirements.txt
-
-├── dvine/
-│   ├── copula.py              # Copula family implementations
-│   ├── vine.py                # D-Vine structure construction
-│   ├── selector.py            # ML-based copula family selector
-│   └── metrics.py             # Tail dependence, Kendall's tau, etc.
-├── trainer/
-│   ├── generate_synthetic.py  # Synthetic data generation
-│   ├── train_selector.py      # Classifier training pipeline
-│   └── evaluate_selector.py   # Selection accuracy evaluation
-├── experiments/
-│   ├── benchmark_bic_vs_ml/   # Comparison experiments
-│   └── real_datasets/         # Application to real data
-├── notebooks/
-│   ├── exploration.ipynb
-│   └── visualization.ipynb
-├── requirements.txt
-└── README.md
+```
